@@ -414,15 +414,18 @@ body {
     transition: transform 0.6s ease-in-out, opacity 0.6s;
 }
 .about-madar-section {
-    padding: 100px 0;
+    padding: 120px 0;
     background-color: #ffffff;
     direction: rtl;
-    overflow: hidden;
+    position: relative;
 }
-
 
 .about-image-wrapper {
     position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-bg-blob {
@@ -430,26 +433,25 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     background: #f4f9eb;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    z-index: 0;
+    z-index: 1;
     animation: blobMorph 8s linear infinite;
 }
 
 .about-img {
     position: relative;
-    z-index: 1;
-    max-width: 280px;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
+    z-index: 2;
+    max-width: 320px;
+    height: auto;
     transition: transform 0.5s ease;
 }
 
 .about-img:hover {
     transform: rotate(-5deg) scale(1.05);
 }
-
 
 .about-title {
     font-size: 2.2rem;
@@ -474,7 +476,6 @@ body {
     text-align: justify;
 }
 
-
 .btn-read-more {
     background: #8cc63f;
     color: white !important;
@@ -496,21 +497,25 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.btn-read-more i {
-    font-size: 1.4rem;
-    transition: transform 0.4s ease;
-}
-
-.btn-read-more:hover i {
-    transform: translateX(-5px);
-}
-
-
 @keyframes blobMorph {
     0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
     33% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
     66% { border-radius: 67% 33% 47% 53% / 37% 48% 52% 63%; }
     100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+@media (max-width: 768px) {
+    .about-image-wrapper {
+        min-height: 300px;
+        margin-bottom: 30px;
+    }
+    .image-bg-blob {
+        width: 250px;
+        height: 250px;
+    }
+    .about-img {
+        max-width: 200px;
+    }
 }
 .main-footer {
     background-color: #000000;
